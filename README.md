@@ -245,7 +245,7 @@ Digunakan untuk memperkecil ukuran file PDF agar lebih mudah dikirim. File conto
 
 ![Hasil compress](docs/img/compress-2-hasil.png)
 
-**Hasil:** ukuran file berkurang dari ... MB menjadi ... MB (isi sesuai hasil percobaan).
+**Hasil:** ukuran file berkurang dari 426 KB menjadi 406 KB (isi sesuai hasil percobaan).
 
 #### 4. Convert (Word ke PDF)
 
