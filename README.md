@@ -173,10 +173,117 @@ cd /opt/stirling-pdf && docker compose restart
 Untuk menjalankan konversi dokumen office ⇄ PDF, digunakan image varian standar (`frooodle/s-pdf:latest`) yang sudah memuat paket LibreOffice headless dan unoserver daemon. Dukungan ini memakan alokasi swap saat konversi berjalan di VPS 2 GB RAM.
 
 ## Cara Pemakaian
+## Cara Pemakaian
 
-- Tampilan aplikasi web
-- Fungsi-fungsi utama
-- Isi dengan data real/dummy (jangan kosongan) dan sertakan beberapa screenshot
+### Tampilan Aplikasi Web
+<!-- Diisi anggota lain -->
+
+### Fungsi-Fungsi Utama
+<!-- Diisi anggota lain -->
+
+### Contoh Penggunaan Fitur
+
+Bagian ini menunjukkan cara memakai lima fitur Stirling-PDF dengan file contoh (dummy). Semua langkah dilakukan lewat browser di https://pdf.gimiaw.web.id/.
+
+#### 1. Merge (Menggabungkan PDF)
+
+Digunakan untuk menggabungkan beberapa file PDF menjadi satu. File contoh: `laporan-bab1.pdf`, `laporan-bab2.pdf`, dan `laporan-bab3.pdf`.
+
+1. Buka menu **Merge** pada halaman utama.
+
+> 📸 **SCREENSHOT 1: Halaman utama, menu Merge dipilih**
+
+![Menu Merge](docs/img/merge-1-menu.png)
+
+2. Unggah ketiga file PDF, lalu atur urutannya dengan *drag and drop* sesuai urutan bab.
+
+> 📸 **SCREENSHOT 2: Tiga file sudah diunggah dan urutannya diatur**
+
+![Upload file merge](docs/img/merge-2-upload.png)
+
+3. Klik tombol **Merge**, lalu unduh hasilnya.
+
+> 📸 **SCREENSHOT 3: Hasil merge (file gabungan) dan jumlah halamannya**
+
+![Hasil merge](docs/img/merge-3-hasil.png)
+
+**Hasil:** tiga file digabung menjadi satu file PDF berurutan.
+
+#### 2. Split (Memisahkan PDF)
+
+Digunakan untuk memecah satu PDF menjadi beberapa file berdasarkan nomor halaman. File contoh: `laporan-lengkap.pdf` (misal 10 halaman).
+
+1. Buka menu **Split** dan unggah `laporan-lengkap.pdf`.
+2. Pada kolom nomor halaman, isi titik pemisahan, misalnya `3,7` agar file terpecah menjadi halaman 1-3, 4-7, dan 8-10.
+
+> 📸 **SCREENSHOT 4: Menu Split dengan file terunggah dan kolom halaman terisi `3,7`**
+
+![Pengaturan split](docs/img/split-1-pengaturan.png)
+
+3. Klik **Split**, lalu unduh hasilnya (biasanya berupa file ZIP).
+
+> 📸 **SCREENSHOT 5: Hasil split (daftar file keluaran, atau isi ZIP setelah di-extract)**
+
+![Hasil split](docs/img/split-2-hasil.png)
+
+**Hasil:** satu PDF terpecah menjadi tiga file terpisah.
+
+#### 3. Compress (Mengompres PDF)
+
+Digunakan untuk memperkecil ukuran file PDF agar lebih mudah dikirim. File contoh: `presentasi-besar.pdf` (misal 15 MB).
+
+1. Buka menu **Compress** dan unggah file.
+2. Pilih tingkat kompresi (level lebih tinggi berarti ukuran lebih kecil, tetapi kualitas gambar menurun).
+
+> 📸 **SCREENSHOT 6: Menu Compress dengan file terunggah dan level kompresi dipilih (tampilkan ukuran awal file)**
+
+![Pengaturan compress](docs/img/compress-1-pengaturan.png)
+
+3. Klik **Compress**, lalu bandingkan ukuran file sebelum dan sesudah.
+
+> 📸 **SCREENSHOT 7: Perbandingan ukuran file sebelum dan sesudah kompresi (Properties file atau tampilan di aplikasi)**
+
+![Hasil compress](docs/img/compress-2-hasil.png)
+
+**Hasil:** ukuran file berkurang dari ... MB menjadi ... MB (isi sesuai hasil percobaan).
+
+#### 4. Convert (Word ke PDF)
+
+Digunakan untuk mengonversi dokumen Office ke PDF (fitur ini memakai LibreOffice di dalam container). File contoh: `surat-contoh.docx`.
+
+1. Buka menu **Convert**, pilih konversi dari **Word/Document** ke **PDF**.
+2. Unggah `surat-contoh.docx`.
+
+> 📸 **SCREENSHOT 8: Menu Convert dengan pilihan format asal (DOCX) dan tujuan (PDF)**
+
+![Pengaturan convert](docs/img/convert-1-pengaturan.png)
+
+3. Klik **Convert**, lalu buka file PDF hasilnya.
+
+> 📸 **SCREENSHOT 9: Hasil PDF yang sudah dibuka (tampilan sama dengan dokumen Word asli)**
+
+![Hasil convert](docs/img/convert-2-hasil.png)
+
+**Hasil:** dokumen Word berhasil menjadi PDF dengan tata letak tetap terjaga.
+
+#### 5. Add Watermark (Menambahkan Tanda Air)
+
+Digunakan untuk menambahkan teks tanda air pada setiap halaman PDF. File contoh: `laporan-lengkap.pdf`.
+
+1. Buka menu **Add Watermark** dan unggah file.
+2. Isi teks watermark (misal `KELOMPOK 3 - IPB`), lalu atur ukuran font, rotasi, dan transparansi.
+
+> 📸 **SCREENSHOT 10: Menu Add Watermark dengan teks dan pengaturan terisi**
+
+![Pengaturan watermark](docs/img/watermark-1-pengaturan.png)
+
+3. Klik **Add Watermark**, lalu unduh dan buka hasilnya.
+
+> 📸 **SCREENSHOT 11: Halaman PDF hasil dengan watermark terlihat**
+
+![Hasil watermark](docs/img/watermark-2-hasil.png)
+
+**Hasil:** teks watermark muncul di setiap halaman dokumen.
 
 ## Pembahasan
  
